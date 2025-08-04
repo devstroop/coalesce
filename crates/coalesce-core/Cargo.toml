@@ -1,0 +1,11 @@
+[package]
+name = "coalesce-core"
+version = "0.1.0"
+edition = "2021"
+description = "Core types and traits for Coalesce universal code translation"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+uuid = { workspace = true }

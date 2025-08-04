@@ -1,0 +1,11 @@
+[package]
+name = "coalesce-gen"
+version = "0.1.0"
+edition = "2021"
+description = "Code generators for Coalesce"
+
+[dependencies]
+coalesce-core = { path = "../coalesce-core" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }

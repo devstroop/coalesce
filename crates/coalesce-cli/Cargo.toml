@@ -1,0 +1,19 @@
+[package]
+name = "coalesce-cli"
+version = "0.1.0"
+edition = "2021"
+description = "Command-line interface for Coalesce"
+
+[[bin]]
+name = "coalesce"
+path = "src/main.rs"
+
+[dependencies]
+coalesce-core = { path = "../coalesce-core" }
+coalesce-parser = { path = "../coalesce-parser" }
+coalesce-gen = { path = "../coalesce-gen" }
+coalesce-lal = { path = "../coalesce-lal" }
+clap = { workspace = true }
+anyhow = { workspace = true }
+serde_json = { workspace = true }
+indicatif = { workspace = true }

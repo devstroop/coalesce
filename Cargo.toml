@@ -1,0 +1,58 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/coalesce-core",
+    "crates/coalesce-parser",
+    "crates/coalesce-gen",
+    "crates/coalesce-lal",
+    "crates/coalesce-cli",
+]
+
+[workspace.dependencies]
+# Core dependencies
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+anyhow = "1.0"
+uuid = { version = "1.0", features = ["v4", "serde"] }
+
+# Async runtime
+tokio = { version = "1.0", features = ["full"] }
+async-trait = "0.1"
+
+# Database
+surrealdb = "1.5"
+
+# ML Framework (Candle)
+candle-core = "0.4"
+candle-nn = "0.4"
+candle-transformers = "0.4"
+
+# ONNX Runtime
+ort = "2.0"
+
+# GraphQL
+async-graphql = "7.0"
+async-graphql-warp = "7.0"
+warp = "0.3"
+
+# WebSocket
+tokio-tungstenite = "0.21"
+
+# Parsing utilities
+tree-sitter = "0.20"
+regex = "1.10"
+semver = "1.0"
+serde_yaml = "0.9"
+
+# CLI
+clap = { version = "4.0", features = ["derive"] }
+indicatif = "0.17"
+
+# Testing
+criterion = "0.5"
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "abort"
